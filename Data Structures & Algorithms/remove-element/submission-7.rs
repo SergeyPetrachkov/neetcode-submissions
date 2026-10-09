@@ -1,0 +1,14 @@
+impl Solution {
+    pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
+        let mut k: usize = 0;
+        for i in 0..nums.len() {
+            if nums[i] != val {
+                let temp = nums[k];
+                nums[k] = nums[i];
+                nums[i] = temp;
+                k += 1;
+            }
+        }
+        return k as i32;
+    }
+}
